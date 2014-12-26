@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/cucumber/cucumber-rails.git
+  revision: 2af9160cb18a1e50d95c1957700635ee5027289a
+  specs:
+    cucumber-rails (1.4.2)
+      capybara (>= 1.1.2, < 3)
+      cucumber (>= 1.3.8, < 2)
+      mime-types (>= 1.16, < 3)
+      nokogiri (~> 1.5)
+      rails (>= 3, < 5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -14,6 +25,8 @@ GEM
       activesupport (= 4.1.7)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    active_model_serializers (0.9.2)
+      activemodel (>= 3.2)
     activemodel (4.1.7)
       activesupport (= 4.1.7)
       builder (~> 3.1)
@@ -27,8 +40,47 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
+    airbrake (4.1.0)
+      builder
+      multi_json
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
+    attr_encrypted (1.3.3)
+      encryptor (>= 1.3.0)
+    awesome_print (1.2.0)
+    bcrypt (3.1.9)
+    better_errors (2.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.1.0)
+      sass (~> 3.2)
+    browser (0.8.0)
     builder (3.2.2)
+    byebug (3.5.1)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
+      slop (~> 3.6)
+    capybara (2.4.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+    childprocess (0.5.5)
+      ffi (~> 1.0, >= 1.0.11)
+    chronic (0.10.2)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -36,25 +88,138 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    columnize (0.9.0)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    cucumber (1.3.17)
+      builder (>= 2.1.2)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 2.12)
+      multi_json (>= 1.7.5, < 2.0)
+      multi_test (>= 0.1.1)
+    currencies (0.4.2)
+    database_cleaner (1.3.0)
+    debug_inspector (0.0.2)
+    debugger-linecache (1.2.0)
+    decent_exposure (2.3.2)
+    devise (3.4.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+    diff-lcs (1.2.5)
+    dotenv (1.0.2)
+    easy_translate (0.5.0)
+      json
+      thread
+      thread_safe
+    email_spec (1.6.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
+    encryptor (1.3.0)
     erubis (2.7.0)
+    excon (0.13.4)
     execjs (2.2.2)
+    fabrication (2.11.3)
+    fabrication-rails (0.0.1)
+      fabrication
+      railties (>= 3.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
+    ffaker (1.25.0)
+    ffi (1.9.6)
+    fog (1.3.1)
+      builder
+      excon (~> 0.13.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.0.4)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
+    foreman (0.76.0)
+      dotenv (~> 1.0.2)
+      thor (~> 0.19.1)
+    formatador (0.2.5)
+    fullcalendar-rails (2.2.3.0)
+      jquery-rails (>= 3.1.1, < 5.0.0)
+      momentjs-rails (~> 2.8, >= 2.8.3)
+    gem-open (0.1.7)
+    gherkin (2.12.2)
+      multi_json (~> 1.3)
+    gibbon (1.1.4)
+      httparty
+      multi_json (>= 1.3.4)
+    haml (4.0.6)
+      tilt
+    highline (1.6.21)
     hike (1.2.3)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
-    jbuilder (2.2.6)
-      activesupport (>= 3.0.0, < 5)
-      multi_json (~> 1.2)
+    i18n-tasks (0.2.22)
+      activesupport
+      easy_translate (>= 0.4.0)
+      erubis
+      highline
+      rake
+      term-ansicolor
+      terminal-table
+    jbuilder (1.5.3)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.3)
+      railties (>= 3.2.16)
     json (1.8.1)
+    jwt (1.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.3.0)
+      launchy (~> 2.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     minitest (5.5.0)
+    momentjs-rails (2.8.3)
+      railties (>= 3.1)
     multi_json (1.10.1)
+    multi_test (0.1.1)
+    multi_xml (0.5.5)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-ssh (2.9.1)
+    newrelic_rpm (3.9.8.273)
+    nokogiri (1.5.11)
+    orm_adapter (0.5.0)
+    pg (0.17.1)
+    pg_search (0.7.8)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
+    phony (2.8.9)
+    phony_rails (0.8.2)
+      activesupport (>= 3.0)
+      countries (>= 0.8.2)
+      phony (~> 2.8.3)
+    polyamorous (1.1.0)
+      activerecord (>= 3.0)
+    populator (1.0.0)
     rack (1.5.2)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    railroady (1.2.0)
     rails (4.1.7)
       actionmailer (= 4.1.7)
       actionpack (= 4.1.7)
@@ -65,6 +230,11 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.7)
       sprockets-rails (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.3)
+    rails_stdout_logging (0.0.3)
     railties (4.1.7)
       actionpack (= 4.1.7)
       activesupport (= 4.1.7)
@@ -73,6 +243,26 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
+    rmagick (2.13.4)
+    rspec-collection_matchers (1.1.2)
+      rspec-expectations (>= 2.99.0.beta1)
+    rspec-core (2.99.2)
+    rspec-expectations (2.99.2)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.99.2)
+    rspec-rails (2.99.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-collection_matchers
+      rspec-core (~> 2.99.0)
+      rspec-expectations (~> 2.99.0)
+      rspec-mocks (~> 2.99.0)
+    ruby-hmac (0.4.0)
+    rubyzip (1.1.6)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -82,7 +272,19 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    spring (1.2.0)
+    selenium-webdriver (2.44.0)
+      childprocess (~> 0.5)
+      multi_json (~> 1.0)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
+    simple_form (3.1.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    slop (3.6.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -92,29 +294,103 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.10)
+    squeel (1.2.2)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      polyamorous (~> 1.1.0)
+    stamp (0.6.0)
+    term-ansicolor (1.3.0)
+      tins (~> 1.0)
+    terminal-table (1.4.5)
     thor (0.19.1)
+    thread (0.1.4)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    time_diff (0.3.0)
+      activesupport
+      i18n
+    tins (1.3.3)
     turbolinks (2.5.3)
       coffee-rails
+    twilio-ruby (3.14.2)
+      builder (>= 2.1.2)
+      jwt (~> 1.0.0)
+      multi_json (>= 1.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.6.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unidecoder (1.1.2)
+    warden (1.2.3)
+      rack (>= 1.0)
+    watir-webdriver (0.6.11)
+      selenium-webdriver (>= 2.18.0)
+    websocket (1.2.1)
+    wirble (0.1.3)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
+  airbrake
+  annotate
+  attr_encrypted
+  awesome_print
+  better_errors
+  binding_of_caller
+  bootstrap-sass
+  browser
+  byebug
+  capybara
+  carrierwave
+  chronic
   coffee-rails (~> 4.0.0)
-  jbuilder (~> 2.0)
+  cucumber-rails!
+  database_cleaner
+  decent_exposure
+  devise
+  email_spec
+  fabrication-rails
+  factory_girl_rails
+  ffaker
+  fog (~> 1.3.1)
+  foreman
+  fullcalendar-rails
+  gem-open
+  gibbon
+  haml
+  i18n-tasks (~> 0.2.10)
+  jbuilder (~> 1.2)
   jquery-rails
+  jquery-ui-rails
+  json
+  launchy
+  letter_opener
+  newrelic_rpm
+  pg
+  pg_search
+  phony_rails
+  populator
+  railroady
   rails (= 4.1.7)
-  sass-rails (~> 4.0.3)
-  sdoc (~> 0.4.0)
-  spring
-  sqlite3
+  rails_12factor
+  rmagick
+  rspec-rails (~> 2.0)
+  sass-rails (~> 4.0.0)
+  sdoc
+  selenium-webdriver
+  simple_form
+  sinatra
+  squeel
+  stamp
+  time_diff
   turbolinks
+  twilio-ruby
   uglifier (>= 1.3.0)
+  unidecoder
+  watir-webdriver
+  wirble
